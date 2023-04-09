@@ -2,7 +2,7 @@ import { updateViteConfig } from "../../adder-tools.js";
 import { addImport, findImport, setDefault } from "../../ast-tools.js";
 
 /** @type {import("../..").AdderRun<import("./__info.js").Options>} */
-export const run = async ({ install, updateJavaScript }) => {
+export const run = async ({ install, updateJavaScript, folderInfo }) => {
 	await updateViteConfig({
 		mutateViteConfig(viteConfig, containingFile, cjs) {
 			let viteImagetoolsImportedAs = findImport({ cjs, package: "vite-imagetools", typeScriptEstree: containingFile }).named["imagetools"];
@@ -47,6 +47,7 @@ export const run = async ({ install, updateJavaScript }) => {
 			}
 		},
 		updateJavaScript,
+		folderInfo,
 	});
 
 	await install({ package: "vite-imagetools" });
