@@ -1,4 +1,3 @@
-import { forEachLeadingCommentRange } from "typescript";
 import { getViteConfigFilePath } from "../../adder-tools";
 
 export const name = "Imagetools";
