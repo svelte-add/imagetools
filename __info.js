@@ -1,4 +1,4 @@
-import { getViteConfigFilePath } from "../../adder-tools";
+import { getViteConfigFilePath } from "../../adder-tools.js";
 
 export const name = "Imagetools";
 
